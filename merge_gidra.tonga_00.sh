@@ -10,6 +10,7 @@
 #$ -o ~/hmiwa/log/merge_gidra.tonga_00.o
 #$ -e ~/hmiwa/log/merge_gidra.tonga_00.e
 #$ -t 1-16:1
+#$ -N vcfset_G&T
 gidra_names=(G06 G150 G164 G220 G282 G306 G412 G99 G05 G135 G152 G217 G256 G304 G326 G627)
 #gidra
 echo "start: `date` ${gidra_names[$SGE_TASK_ID-1]}"
