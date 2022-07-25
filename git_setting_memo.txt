@@ -1,0 +1,5 @@
+cd hmiwa/analysis_gidra.tonga
+git init
+git remote add origin git@github.com:hmiwa30/analysis_gidra.tonga.git
+git pull origin HEAD:main
+#README.md in this directory!
