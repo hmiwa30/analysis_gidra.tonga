@@ -20,6 +20,8 @@ singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 b
 singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools view --header-only ~/hmiwa/downloads/Gidra/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.vcf.gz > ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${gidra_names[$SGE_TASK_ID-1]} header done: `date`"
 #contents(GT)
 singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools query -f '%CHROM\t%POS\t%ID\t%REF\t%ALT\tGT[\t%GT]\n' ~/hmiwa/downloads/Gidra/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.vcf.gz >> ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${gidra_names[$SGE_TASK_ID-1]} contents(GT) done: `date`"
+#sed
+sed -E '/^chr/s/^chr//g' ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${gidra_names[$SGE_TASK_ID-1]} sed done: `date`"
 #bgzip
 singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${gidra_names[$SGE_TASK_ID-1]} bgzip done: `date`"
 #index
@@ -34,6 +36,8 @@ singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 b
 singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools view --header-only ~/hmiwa/downloads/Tonga/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.vcf.gz > ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${tonga_names[$SGE_TASK_ID-1]} header done: `date`"
 #contents(GT)
 singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools query -f '%CHROM\t%POS\t%ID\t%REF\t%ALT\tGT[\t%GT]\n' ~/hmiwa/downloads/Tonga/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.vcf.gz >> ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${tonga_names[$SGE_TASK_ID-1]} contents(GT) done: `date`"
+#sed
+sed -E '/^chr/s/^chr//g' ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${tonga_names[$SGE_TASK_ID-1]} sed done: `date`"
 #bgzip
 singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf;echo "${tonga_names[$SGE_TASK_ID-1]} bgzip done: `date`"
 #index
