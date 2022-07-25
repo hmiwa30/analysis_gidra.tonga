@@ -43,3 +43,4 @@ singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/a
 #index
 singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools index ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.vcf.gz;echo "${tonga_names[$SGE_TASK_ID-1]} index done: `date`"
 echo "finish: `date` ${tonga_names[$SGE_TASK_ID-1]}"
+#please do "qsub" under ~/hmiwa
