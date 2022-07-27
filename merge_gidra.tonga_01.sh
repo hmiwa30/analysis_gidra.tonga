@@ -10,7 +10,7 @@
 #$ -o ~/hmiwa/log/merge_gidra.tonga_01_${SGE_TASK_ID}.o
 #$ -e ~/hmiwa/log/merge_gidra.tonga_01_${SGE_TASK_ID}.e
 #$ -t 1-22:1
-#$ -N mergeg+t+1KG
+#$ -N mergeg+t
 echo "start: `date` chr${SGE_TASK_ID}"
 #pass
 export PERL5LIB=/lustre7/home/hmiwa-spc/vcftools/src/perl/
