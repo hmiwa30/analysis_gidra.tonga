@@ -4,8 +4,8 @@
 #$ -l medium
 #$ -l d_rt=192:00:00
 #$ -l s_rt=192:00:00
-#$ -l s_vmem=352G
-#$ -l mem_req=352G
+#$ -l s_vmem=32G
+#$ -l mem_req=32G
 #$ -S /bin/bash
 #$ -o ~/hmiwa/log/merge_gidra.tonga_01.o
 #$ -e ~/hmiwa/log/merge_gidra.tonga_01.e
