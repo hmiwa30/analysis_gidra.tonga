@@ -9,7 +9,7 @@
 #$ -S /bin/bash
 #$ -o ~/hmiwa/log/merge_gidra.tonga_01.o
 #$ -e ~/hmiwa/log/merge_gidra.tonga_01.e
-#$ -t 1-1:1
+#$ -t 1-22:1
 #$ -N mergeg+t+1KG
 echo "start: `date` chr${SGE_TASK_ID}"
 #merge
