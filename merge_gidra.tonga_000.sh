@@ -22,7 +22,7 @@ sed -e 's/GT\t0$/GT\t0\/0/g' -e 's/GT\t\.$/GT\t0\/0/g' -e 's/GT\t1$/GT\t1\/1/g' 
 singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.vcf;echo "${gidra_names[$SGE_TASK_ID-1]} bgzip done: `date`"
 singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.cleaned.vcf;echo "${gidra_names[$SGE_TASK_ID-1]} bgzip done: `date`"
 #index
-singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools index ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.cleaned.vcf.gz;echo "${gidra_names[$SGE_TASK_ID-1]} index done: `date`"
+/lustre7/home/hmiwa-spc/bcftools/bcftools index ~/hmiwa/analysis_gidra.tonga/data/${gidra_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.cleaned.vcf.gz;echo "${gidra_names[$SGE_TASK_ID-1]} index done: `date`"
 echo "finish: `date` ${gidra_names[$SGE_TASK_ID-1]}"
 tonga_names=(T03 T120 T150 t159 t21 T47 t69 T82 t112 t138 T153 t160 t38 t51 T76 T85)
 #tonga
@@ -34,6 +34,6 @@ sed -e 's/GT\t0$/GT\t0\/0/g' -e 's/GT\t\.$/GT\t0\/0/g' -e 's/GT\t1$/GT\t1\/1/g' 
 singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.vcf;echo "${tonga_names[$SGE_TASK_ID-1]} bgzip done: `date`"
 singularity exec /usr/local/biotools/h/htslib:1.9--hc238db4_4 bgzip -f ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.cleaned.vcf;echo "${tonga_names[$SGE_TASK_ID-1]} bgzip done: `date`"
 #index
-singularity exec /usr/local/biotools/b/bcftools-snvphyl-plugin:1.9--he673b24_1 bcftools index ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.cleaned.vcf.gz;echo "${tonga_names[$SGE_TASK_ID-1]} index done: `date`"
+/lustre7/home/hmiwa-spc/bcftools/bcftools index ~/hmiwa/analysis_gidra.tonga/data/${tonga_names[$SGE_TASK_ID-1]}_sorted.genome.gtonly.sedchr.cleaned.vcf.gz;echo "${tonga_names[$SGE_TASK_ID-1]} index done: `date`"
 echo "finish: `date` ${tonga_names[$SGE_TASK_ID-1]}"
 #please do "qsub" under ~/hmiwa
